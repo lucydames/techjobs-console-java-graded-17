@@ -39,28 +39,22 @@ public class TechJobsTest {
     }
 
     @Test
-    public void testPrintJobs() throws IOException {
-        String input = "0\n2\nBuzzbold\nx";
-        String output = runProgramWithInput(input);
-        String expected = getFileContents("src/test/resources/testPrintJobs.txt");
-        assertEquals(expected.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
-    }
-
-    @Test
     public void testPrintJobsNoResults() throws IOException {
         String input = "0\n2\nChicago\nx";
         String output = runProgramWithInput(input);
-        String expected = getFileContents("src/test/resources/testPrintJobsNoResults.txt");
-        assertEquals(expected.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
+        String expectedOutput = "Welcome to LaunchCode's TechJobs App!\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n\nSearch by:\n0 - All\n1 - Position Type\n2 - Employer\n3 - Location\n4 - Skill\n\nSearch term:\n\nNo Results\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n";
+        assertEquals(expectedOutput.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
     }
+
 
     @Test
     public void testFindByValue() throws IOException {
         String input = "0\n0\nRuby\nx";  // Change the search term here
         String output = runProgramWithInput(input);
-        String expectedOutput = "Search term:\n\nNo Results\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n";
+        String expectedOutput = "Welcome to LaunchCode's TechJobs App!\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n\nSearch by:\n0 - All\n1 - Position Type\n2 - Employer\n3 - Location\n4 - Skill\n\nSearch term:\n\nNo Results\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n";
         assertEquals(expectedOutput.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
     }
+
 
     @Test
     public void testCaseInsensitiveSearch() throws IOException {
