@@ -49,9 +49,9 @@ public class TechJobsTest {
 
     @Test
     public void testFindByValue() throws IOException {
-        String input = "0\n0\nRuby\nx";  // Change the search term here
+        String input = "0\n0\nRuby\nx";
         String output = runProgramWithInput(input);
-        //updated to expected
+        //updated expected
         String expectedOutput = "Welcome to LaunchCode's TechJobs App!\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n\nSearch by:\n0 - All\n1 - Position Type\n2 - Employer\n3 - Location\n4 - Skill\n\nSearch term:\n\nNo Results\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n";
         assertEquals(expectedOutput.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
     }
