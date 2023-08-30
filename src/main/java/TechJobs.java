@@ -44,7 +44,7 @@ public class TechJobs {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
 
-                    System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
+                    System.out.println("*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
                     for (String item : results) {
@@ -57,7 +57,7 @@ public class TechJobs {
                 String searchField = getUserSelection("Search by:", columnChoices);
 
                 // What is their search term?
-                System.out.println("\nSearch term:");
+                System.out.println("\nSearch term:\n");
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
@@ -122,7 +122,7 @@ public class TechJobs {
 
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.isEmpty()) {
-            System.out.println("No Results\n");
+            System.out.println("No Results");
             return;
         }
 
@@ -133,7 +133,7 @@ public class TechJobs {
                 String value = entry.getValue();
                 System.out.println(key + ": " + value);
             }
-            System.out.println("*****\n");
+            System.out.println("*****");
         }
     }
 }

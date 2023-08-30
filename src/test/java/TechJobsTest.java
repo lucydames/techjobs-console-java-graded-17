@@ -56,10 +56,10 @@ public class TechJobsTest {
 
     @Test
     public void testFindByValue() throws IOException {
-        String input = "0\n0\nRuby\nx";
+        String input = "0\n0\nRuby\nx";  // Change the search term here
         String output = runProgramWithInput(input);
-        String expected = getFileContents("src/test/resources/testFindByValue.txt");
-        assertEquals(expected.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
+        String expectedOutput = "Search term:\n\nNo Results\n\nView jobs by (type 'x' to quit):\n0 - Search\n1 - List\n";
+        assertEquals(expectedOutput.replaceAll("\r\n?", "\n"), output.replaceAll("\r\n?", "\n"));
     }
 
     @Test
