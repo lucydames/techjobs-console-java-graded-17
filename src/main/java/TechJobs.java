@@ -52,8 +52,7 @@ public class TechJobs {
                     }
                 }
 
-            } else { // choice is "search"
-
+            } else if (actionChoice.equals("search")) {
                 // How does the user want to search (e.g. by skill or employer)
                 String searchField = getUserSelection("Search by:", columnChoices);
 
@@ -67,6 +66,7 @@ public class TechJobs {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
             }
+
         }
     }
 
@@ -119,8 +119,7 @@ public class TechJobs {
 
     // Print a list of jobs
     // Inside the TechJobs class
-// Inside the TechJobs class
-// Inside the TechJobs class
+
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.isEmpty()) {
             System.out.println("No Results\n");
